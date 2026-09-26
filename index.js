@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 3000
 
+app.set('trust proxy', true);
+
 app.get('/', (req,res) => {
   const clientIp = req.ip;
   res.send(`Ваш IP: ${clientIp}`);
